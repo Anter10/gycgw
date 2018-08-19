@@ -10,7 +10,7 @@
 <%
    int pagenum = request.getParameter("page") != null?Integer.valueOf(request.getParameter("page").toString()) : 1;
    int num = request.getParameter("num") != null?Integer.valueOf(request.getParameter("num").toString()) : 20;
-   List<gycuser> us = HibernateDatabase.getInstance().queryLimitData("from gycuser", (pagenum - 1) * num, pagenum * num);
+   List<gycuser> us = HibernateDatabase.getInstance().queryLimitData("from shici", (pagenum - 1) * num, pagenum * num);
    ConstFunction.sendDataToClient(JSONArray.fromObject(us).toString(), response, true);
 %>
 

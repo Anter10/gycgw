@@ -30,7 +30,18 @@
         <action name="index" class="com.hskj.login.LoginAction">
             <result name="suc">/login/index.jsp</result>
         </action>
- 
+        
+        <action name="shici" class="com.hskj.common.ShiCiAction">
+            <result name="suc">/login/index.jsp</result>
+        </action>
+     </package>
+     
+     
+    <package name="scpackage" namespace="/sc" extends="struts-default">
+        <action name="shici" class="com.hskj.common.ShiCiAction">
+            <result name="suc">/sc/getshici.jsp</result>
+            <result name="err">/sc/getshicierror.jsp</result>
+        </action>
      </package>
     
    

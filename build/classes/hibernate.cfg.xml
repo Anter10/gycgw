@@ -41,6 +41,7 @@
  
 <!-- Mapping files -->
 <mapping resource="allhibs/gycuser.hbm.xml" />
-           
+<mapping resource="allhibs/shici.hbm.xml" />
+                     
 </session-factory>
 </hibernate-configuration>
