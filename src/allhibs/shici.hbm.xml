@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.boot.model.source.internal.hbm">
+    <class name="com.hskj.models.shici" table="shici" >
+           <id name="id" type="integer">
+               <column name="id" />
+           </id>
+           <property name="shiren" type="string">
+                <column name="shiren" length="60" />
+           </property>
+           
+            <property name="title" type="string">
+                <column name="title" length="120" />
+           </property>
+           
+            <property name="message" type="string">
+                <column name="message" length="4000" />
+           </property>
+           
+            <property name="addtime" type="string">
+                <column name="addtime" length="40" />
+           </property>
+           
+            <property name="classname" type="string">
+                <column name="classname" length="140" />
+           </property>
+           
+            <property name="px" type="string">
+                <column name="px" length="1200" />
+           </property>
+            <property name="cd" type="string">
+                <column name="cd" length="20" />
+           </property>
+    </class>
+
+</hibernate-mapping>

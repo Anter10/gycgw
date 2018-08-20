@@ -61,5 +61,7 @@
         <description>Don't assign users to this role</description>
         <role-name>no-users</role-name>
     </security-role>
-
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 </web-app>

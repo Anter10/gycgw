@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-   <constant name="struts.devMode" value="true" />
-   <constant name="struts.action.extension" value="do" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="os" value="Current OS = ${os.name}"/>
+    <constant name="struts.action.extension" value="do" />
+    
    
-   <package name="login" namespace="/login" extends="struts-default">
-            <action name="index">
-                   <result>/login/index.jsp</result>
-            </action>
-   </package>
-   
-</struts>
+    <package name="default" namespace="/login" extends="struts-default">
+      <!-- <interceptors>
+         <interceptor name="logininc" class="com.movie.LoginInc"/>
+          <interceptor-stack name="appDefault">
+		    <interceptor-ref name="defaultStack">
+		       <param name="exception.logEnabled">true</param>
+		       <param name="exception.logLevel">ERROR</param>
+		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit</param>
+		    </interceptor-ref>
+		  </interceptor-stack>
+      </interceptors> -->
+    
+	    <global-exception-mappings>
+	        <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="securityerror" />
+	        <exception-mapping exception="java.lang.Exception" result="error" />
+	   	</global-exception-mappings>
+	   	
+        <action name="index" class="com.hskj.login.LoginAction">
+            <result name="suc">/login/index.jsp</result>
+        </action>
         
+        <action name="shici" class="com.hskj.common.ShiCiAction">
+            <result name="suc">/login/index.jsp</result>
+        </action>
+     </package>
+     
+     
+    <package name="scpackage" namespace="/sc" extends="struts-default">
+        <action name="shici" class="com.hskj.common.ShiCiAction">
+            <result name="suc">/sc/getshici.jsp</result>
+            <result name="err">/sc/getshicierror.jsp</result>
+        </action>
+     </package>
+    
+   
+
+    <!-- Add addition packages and configuration here. -->
+</struts>
