@@ -42,6 +42,12 @@
             <result name="suc">/sc/getshici.jsp</result>
             <result name="err">/sc/getshicierror.jsp</result>
         </action>
+        
+        <action name="ssc" class="com.hskj.common.SearchShiCi">
+            <result name="suc">/sc/searchsc.jsp</result>
+            <result name="err">/sc/getshicierror.jsp</result>
+        </action>
+        
      </package>
     
    
